@@ -25,7 +25,8 @@ module "vpc_test" {
   main_cidr_block = "10.0.0.0/24"
 }
 module "igw_test" {
-  source = "./INTERNET_GATEWAYS_TEST"
+  source     = "./INTERNET_GATEWAYS_TEST"
+  test_vpc_id = module.vpc_test.vpc_id
 }
 module "subnet_test" {
   source = "./SUBNET_TEST"
